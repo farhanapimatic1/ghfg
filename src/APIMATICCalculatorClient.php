@@ -23,11 +23,11 @@ class APIMATICCalculatorClient
         return Controllers\SimpleCalculatorController::getInstance();
     }
     /**
-     * Singleton access to API controller
-     * @return Controllers\APIController The *Singleton* instance
+     * Singleton access to Fghfghfghfghfghfghfghfghfghfgh controller
+     * @return Controllers\FghfghfghfghfghfghfghfghfghfghController The *Singleton* instance
      */
-    public function getClient()
+    public function getFghfghfghfghfghfghfghfghfghfgh()
     {
-        return Controllers\APIController::getInstance();
+        return Controllers\FghfghfghfghfghfghfghfghfghfghController::getInstance();
     }
 }

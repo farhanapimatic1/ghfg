@@ -123,7 +123,7 @@ $client = new APIMATICCalculatorLib\APIMATICCalculatorClient();
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [SimpleCalculatorController](#simple_calculator_controller)
-* [APIController](#api_controller)
+* [FghfghfghfghfghfghfghfghfghfghController](#fghfghfghfghfghfghfghfghfghfgh_controller)
 
 ## <a name="simple_calculator_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SimpleCalculatorController") SimpleCalculatorController
 
@@ -163,7 +163,7 @@ $collect['operation'] = $operation;
 $x = 'x';
 $collect['x'] = $x;
 
-$y = 41.3767310913544;
+$y = 107.522598985826;
 $collect['y'] = $y;
 
 
@@ -174,23 +174,23 @@ $result = $simpleCalculator->getCalculate($collect);
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
+## <a name="fghfghfghfghfghfghfghfghfghfgh_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FghfghfghfghfghfghfghfghfghfghController") FghfghfghfghfghfghfghfghfghfghController
 
 ### Get singleton instance
 
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
+The singleton instance of the ``` FghfghfghfghfghfghfghfghfghfghController ``` class can be accessed from the API Client.
 
 ```php
-$client = $client->getClient();
+$fghfghfghfghfghfghfghfghfghfgh = $client->getFghfghfghfghfghfghfghfghfghfgh();
 ```
 
-### <a name="create_trtr"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createTrtr") createTrtr
+### <a name="create_fghfghfghfgh"></a>![Method: ](https://apidocs.io/img/method.png ".FghfghfghfghfghfghfghfghfghfghController.createFghfghfghfgh") createFghfghfghfgh
 
 > TODO: Add a method description
 
 
 ```php
-function createTrtr($options)
+function createFghfghfghfgh($options)
 ```
 
 #### Parameters
@@ -228,7 +228,7 @@ $xUsername = 'x-username';
 $collect['xUsername'] = $xUsername;
 
 
-$result = $client->createTrtr($collect);
+$result = $fghfghfghfghfghfghfghfghfghfgh->createFghfghfghfgh($collect);
 
 ```
 

@@ -21,16 +21,16 @@ use Unirest\Request;
 /**
  * @todo Add a general description for this controller.
  */
-class SimpleCalculatorController extends BaseController
+class FghfghfghfghfghfghfghfghfghfghController extends BaseController
 {
     /**
-     * @var SimpleCalculatorController The reference to *Singleton* instance of this class
+     * @var FghfghfghfghfghfghfghfghfghfghController The reference to *Singleton* instance of this class
      */
     private static $instance;
 
     /**
      * Returns the *Singleton* instance of this class.
-     * @return SimpleCalculatorController The *Singleton* instance.
+     * @return FghfghfghfghfghfghfghfghfghfghController The *Singleton* instance.
      */
     public static function getInstance()
     {
@@ -42,16 +42,19 @@ class SimpleCalculatorController extends BaseController
     }
 
     /**
-     * Calculates the expression using the specified operation.
+     * @todo Add general description for this endpoint
      *
      * @param  array  $options    Array with all options for search
-     * @param string $options['operation'] The operator to apply on the variables
-     * @param string $options['x']         The LHS value
-     * @param double $options['y']         The RHS value
-     * @return double response from the API call
+     * @param Models\TrtrRequest $options['body']          TODO: type description here
+     * @param string             $options['cacheControl']  TODO: type description here
+     * @param string             $options['contentType']   TODO: type description here
+     * @param string             $options['postmanToken']  TODO: type description here
+     * @param string             $options['xPassword']     TODO: type description here
+     * @param string             $options['xUsername']     TODO: type description here
+     * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getCalculate(
+    public function createFghfghfghfgh(
         $options
     ) {
 
@@ -59,35 +62,31 @@ class SimpleCalculatorController extends BaseController
         $_queryBuilder = Configuration::$BASEURI;
         
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/{operation}';
-
-        //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
-            'operation' => $this->val($options, 'operation'),
-            ));
-
-        //process optional query parameters
-        APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
-            'x'         => $this->val($options, 'x'),
-            'y'         => $this->val($options, 'y'),
-        ));
+        $_queryBuilder = $_queryBuilder.'/pushnow';
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0'
+            'user-agent'    => 'APIMATIC 2.0',
+            'Accept'        => 'application/json',
+            'content-type'  => 'application/json; charset=utf-8',
+            'Cache-Control'   => $this->val($options, 'cacheControl'),
+            'Content-Type'    => $this->val($options, 'contentType'),
+            'Postman-Token'   => $this->val($options, 'postmanToken'),
+            'x-password'      => $this->val($options, 'xPassword'),
+            'x-username'      => $this->val($options, 'xUsername')
         );
 
         //call on-before Http callback
-        $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
+        $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl);
         if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
         //and invoke the API call request to fetch the response
-        $response = Request::get($_queryUrl, $_headers);
+        $response = Request::post($_queryUrl, $_headers, Request\Body::Json($this->val($options, 'body')));
 
         $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);

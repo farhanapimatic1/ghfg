@@ -14,35 +14,8 @@ namespace APIMATICCalculatorLib;
 class Configuration
 {
     /**
-     * The environment being used'
+     * The base Uri for API calls
      * @var string
      */
-    public static $environment = Environments::PRODUCTION;
-
-    /**
-     * Get the base uri for a given server in the current environment
-     * @param  string $server Server name
-     * @return string         Base URI
-     */
-    public static function getBaseUri($server = Servers::DEFAULT_)
-    {
-        return APIHelper::appendUrlWithTemplateParameters(
-            static::$environmentsMap[static::$environment][$server],
-            array(
-            )
-        );
-    }
-
-    /**
-     * A map of all baseurls used in different environments and servers
-     * @var array
-     */
-    private static $environmentsMap = array(
-        Environments::PRODUCTION => array(
-            Servers::DEFAULT_ => 'http://examples.apimatic.io/apps/calculator',
-        ),
-        Environments::ASASASAS => array(
-            Servers::DEFAULT_ => 'asdasdasdasdsdasdasd',
-        ),
-    );
+    public static $BASEURI = 'http://examples.apimatic.io/apps/calculator';
 }
